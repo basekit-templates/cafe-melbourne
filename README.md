@@ -1,4 +1,3 @@
-cafe-melbourne
-==============
+Sycamore
 
-Cafe Melbourne BaseKit Template
+=====
