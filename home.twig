@@ -1,0 +1,28 @@
+
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<header>
+    <div class="wrapper clearfix">
+        <div class="header-top-border"></div>
+        <div class="companyheader clearfix">
+            {{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+            {{widget('companyname', 'companyname', {"business": "Cafe Melbourne"})|raw}}
+        </div>
+        <div class="header-bottom-border"></div>
+    </div><!--end wrapper clearfix-->
+</header>
+
+{{widget('menusections', 'desktop-menusections', {})|raw}}
+
+{{widget('menu', 'menu1', {})|raw}}
+
+<footer>
+    <div class="wrapper clearfix">
+        {{widget('content', 'footercolumn1content', {"content":"<p>Lorem Ipsum Dolor</p>"})|raw}}
+
+    </div>
+</footer>
+
+{% endblock %}
