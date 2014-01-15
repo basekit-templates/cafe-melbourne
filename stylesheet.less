@@ -162,8 +162,7 @@ header {
     min-height: 30px;
     border-bottom: 1px solid @color-swatch7;
     @media @tablet {
-        border-top: 1px dotted rgba(0, 0, 0, 0.3);
-        border-top: none;
+        border-bottom: none;
     }
     ul {
         display: inline-block;
@@ -175,6 +174,9 @@ header {
             display: none;
             /* Then these styles are applied */
             width: 100%;
+            padding: 40px 0 0;
+            border-bottom: 1px solid @color-swatch7;
+
         }
 
         /* ALIGN CENTER */
@@ -248,15 +250,17 @@ header {
                     width: 100%;
                     position: absolute;
                     top: 0;
-                    background-color: @color-swatch3;
+                    background-image: image('/images/subsection-texture.png');
+                background-repeat: repeat-x;
                     height: 40px;
                     &:after {
-                        content:"";
-                        background: image('/images/nav-icon.png') no-repeat;
-                        background-position: center;
+                        content:"MENU";
+                        color: @font-swatch5-color;
+                        font-size: @font-swatch6-font-size;
+                        text-decoration: underline;
                         width: 50px;
                         height: 50px;
-                        top: -5px;
+                        top: 8px;
                         left: 50%;
                         margin-left:-25px;
                         display: inline-block;
