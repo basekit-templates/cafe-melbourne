@@ -283,6 +283,10 @@ header {
     background-size: 10px;
     background-position: bottom;
     margin-bottom: 40px;
+    display: none;
+    &.selected {
+        display: block;
+    }
         @media @tablet {
             padding: 10px 0;
         }
@@ -295,7 +299,7 @@ header {
 
     /* SECTION AND SUB-SECTION HEADERS */
 
-        .menu-header, .menu-section-header {
+        .menu-header, .menu-subsection-header {
             margin: 2em 0;
             text-align: center;
 
@@ -310,17 +314,17 @@ header {
                 border-radius: 5px;
             }
 
-            h2 { /* menu-section-name */
+            h2 { /* MENU-SUBSECTION-HEADER */
                 background-image: image('/images/subsection-texture.png');
                 background-repeat: repeat-x;
                 padding-top: 3px;
             }
 
-            p { /* menu-availability, menu-description and menu-section-description */
+            p { /* description */
                 padding: 10px 0; 
             }
 
-        } /*end menu-header and menu-section-header */
+        } /* end MENU-HEADER AND SUB-SECTION HEADER */
 
 
     /* ITEMS */
@@ -529,7 +533,7 @@ header {
         } /* end ol */  
 
 
-        .menu-section.menu-item-promoted { /* PROMOTED SUB-SECTION: ol.menu-subsection > li.menu-section.menu-item-promoted */  
+        .menu-subsection .menu-subsection-promoted { /* PROMOTED SUB-SECTION */ 
             padding: 0 2em 0;
             margin-bottom: 5em;
             position: relative;
@@ -541,7 +545,7 @@ header {
                 padding: 0 2em 0;
                 margin-bottom: 2em;
             }
-            .menu-section-header {
+            .menu-subsection-header {
                 margin: 0;
                 h2 { /* menu-section-name */
                     color: @color-swatch3;
