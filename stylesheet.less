@@ -9,8 +9,12 @@ body {
 }
 
 .wrapper {
-  width: 90%;
-  margin: 0 5%;
+    width: 90%;
+    margin: 0 5%;
+    @media only screen and (min-width: 1140px) {
+        width: 960px; /* 1140px - 10% for margins */
+        margin: 0 auto;
+    }
 }
 
 
@@ -108,17 +112,23 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
  overflow: visible;
 }
 
+.main {
+    padding: 20px 0 0;
+    border-top: 1px solid @color-swatch7;
+}
 
 /* ===============================
    HEADER
    =============================== */
 
 header {
-    border-top: 5px solid @color-swatch3;
     background-color: transparent;
+    padding: 2.5em 0 1.5em;
+    @media @tablet {
+        padding: 0;
+    }
  .companyheader {
         float: none;
-        margin-top: 40px;
         .logo, .companyname {
             text-align: center;
             float: none;
@@ -141,7 +151,6 @@ header {
                 @media @mobile {
                     font-size: bkscale(@font-swatch10-font-size,0.8);
                     line-height: bkscale(@font-swatch10-line-height,0.8);
-                    padding-bottom: 20px;
                 }
         } 
     }/* end companyheader */
@@ -155,6 +164,200 @@ header {
         }
     }
 }   /* end header */
+
+
+/* ===============================
+   EXTENDED NAVIGATION
+   =============================== */
+
+.widget {
+    .extendednavigation {
+        float: none;
+        position: relative;
+        max-width: 100%;
+        min-height: 40px;
+        background-color: @color-swatch3;
+        li {
+            ul {
+                display: none;
+            }
+        }
+        ul {
+            display: table;
+            float: none;
+            margin: 0 auto;
+            text-align: center;
+            padding: 4px 0 0 0;
+            @media @tablet {
+                /* Hidden until nav icon is clicked */
+                display: none;
+                /* Then these styles are applied */
+                width: 100%;
+                border-top: 1px solid @color-swatch7;
+                margin: 0;
+                padding: 40px 0 0;
+            }
+            li {
+                float: left;
+                display: block;
+                padding: 5px 0;
+                @media @tablet {
+                    width: 100%;
+                    padding: 1em 0;
+                    border-bottom: 1px dotted @color-swatch7;
+                    background-color: @color-swatch1;
+                    background-image:image('/images/texture-background.png');
+                }
+                &:last-child {
+                    @media @tablet {
+                        border-bottom: 1px solid @color-swatch7;
+                    }
+                }
+
+                &:hover {
+                    ul {
+                        display: block;
+                        position: absolute;
+                        background-color: @color-swatch3;
+                        z-index: 500;
+                        padding: 0;
+                        margin: 0 0 0;
+                        @media @tablet {
+                            background-color: @color-swatch1;
+                            background-image:image('/images/texture-background.png');
+                        }
+                        li {
+                            display: block;
+                            width: 100%;
+                                .box-sizing {
+                                    a {
+                                        display: block;
+                                        color: @color-swatch5;
+                                        padding: 0;
+                                    }
+                                }
+                        }
+                    }
+                }
+
+                a {
+                    display: block;
+                    padding: 0 15px;
+                    font-family: @font-swatch6-font-family;
+                    font-size: @font-swatch6-font-size;
+                    font-weight: @font-swatch6-font-weight;
+                    color: @font-swatch6-color;
+                    line-height: @font-swatch6-line-height;
+                    letter-spacing: @font-swatch6-letter-spacing;
+                    &:hover {
+                        color: @font-swatch6-color-hover;
+                        text-decoration: underline;
+                        @media @tablet {
+                            color: @color-swatch5;
+                        }
+                    }
+                    @media @tablet {
+                        color: @color-swatch5;
+                    }
+                }
+
+                &.folder {
+                    /* Folder dropdown arrow BG style goes Here */  
+                    margin-right: 20px;            
+                    cursor: pointer;
+                    background-image: none;
+                    @media @tablet {
+                        background-image:image('/images/texture-background.png');
+                        background-repeat: repeat;
+                        background-position: center;
+                    }
+                    .text {
+                        display: block;
+                        padding: 0 15px;
+                        font-family: @font-swatch6-font-family;
+                        font-size: @font-swatch6-font-size;
+                        font-weight: @font-swatch6-font-weight;
+                        color: @font-swatch6-color;
+                        line-height: @font-swatch6-line-height;
+                        letter-spacing: @font-swatch6-letter-spacing;
+                        position: relative;
+                        &:after {
+                            content: "▼";
+                            font-size: 5px;
+                            position: absolute;
+                            top: 1px;
+                            display: block;
+                            z-index: 9999999;
+                            right: 0;
+                            color: @color-swatch1;
+                            @media @tablet {
+                                font-size: 10px;
+                                color: @color-swatch3;
+                                padding-right: 10px;
+                            }
+                        }
+                        @media @tablet {
+                                color: @color-swatch5;
+                            }
+                        &:hover {
+                            color: @font-swatch6-color-hover;
+                            text-decoration: none;
+                            @media @tablet {
+                                color: @color-swatch5;
+                            }
+                        }
+                    }
+                    ul {
+                        padding: 0;
+                        @media @tablet {
+                            margin-top: 14px;
+                            background-color: @color-swatch1;
+                            background-image:image('/images/texture-background.png');
+                        }
+                        li {
+                            a {
+                                .text {
+                                    padding: 0;
+                                    &:after {
+                                        content: "";
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+
+        a {
+           &.pull {
+               display: none;
+               @media @tablet {
+                   display: block;
+                   width: 20px;
+                   height: 44px;
+                   position: absolute;
+                   top: -3px;
+                   right: 48.5%;
+                   &:hover {
+                       cursor: pointer;
+                   }
+                   &:after {
+                       content: '';
+                       position: absolute;
+                       width: 100%;
+                       height: 3px;
+                       background: @color-swatch6;
+                       top: 15px;
+                       left: 0;
+                       box-shadow: 0 6px 0 @color-swatch6, 0 12px 0 @color-swatch6;
+                   }
+               }
+           }
+       }
+    }
+}
 
 /* ===============================
    MENU SECTIONS NAVIGATION
@@ -173,7 +376,7 @@ header {
         display: inline-block;
         list-style: none;
         margin: 0px;
-        padding: 20px 0 0;
+        padding: 13px 0 5px;
         @media @tablet {
             /* Hidden until nav icon is clicked */
             display: none;
@@ -289,6 +492,7 @@ header {
         background-size: 10px;
         background-position: bottom;
         margin-bottom: 40px;
+        border-top: 0;
         display: none;
         &.selected {
             display: block;
@@ -624,7 +828,7 @@ header {
 
 
 /* ===============================
-  MENU - FOOTER 
+  FOOTER 
    =============================== */
 
 footer {
@@ -648,27 +852,72 @@ footer .widget.content p {
     padding: 0;
 }
 
+/* ===============================
+  SOCIAL ICONS IN FOOTER 
+   =============================== */
 
-
-
-
-@media only screen and (min-width: 1140px) {
-  .wrapper {
-    width: 960px; /* 1140px - 10% for margins */
-    margin: 0 auto;
-  }
+footer .widget.profile .bk-profile-socialicons span a {
+    background-color: transparent;
+    border: 3px solid lighten(@color-swatch2,5%);
+    &:hover {
+        background-color: darken(@color-swatch2,5%);
+    }
 }
 
-.clearfix:before,
-.clearfix:after {
-  content: " ";
-  display: table;
-}
-.clearfix:after {
-  clear: both;
-}
-.clearfix {
-  *zoom: 1;
+footer .widget.profile .bk-profile-socialicons {
+    text-align: center;
 }
 
+
+/* SVG ICONS */
+
+.svg .widget.profile .bk-profile-socialicons span.bk-socialicons-twitter a {
+    background-image: image('/images/social/socialicons-twitter.svg');
+}
+
+.svg .widget.profile .bk-profile-socialicons span.bk-socialicons-linkedin a {
+    background-image: image('/images/social/socialicons-linkedin.svg')
+}
+
+.svg .widget.profile .bk-profile-socialicons span.bk-socialicons-facebook a {
+    background-image: image('/images/social/socialicons-facebook.svg')
+}
+
+.svg .widget.profile .bk-profile-socialicons span.bk-socialicons-rss a {
+    background-image: image('/images/social/socialicons-rss.svg')
+}
+
+.svg .widget.profile .bk-profile-socialicons span.bk-socialicons-googleplus a {
+    background-image: image('/images/social/socialicons-googleplus.svg')
+}
+
+.svg .widget.profile .bk-profile-socialicons span.bk-socialicons-youtube a {
+    background-image: image('/images/social/socialicons-youtube.svg')
+}
+
+/* PNG ICONS */
+
+.widget.profile .bk-profile-socialicons span.bk-socialicons-twitter a {
+    background-image: image('/images/social/socialicons-twitter.png');
+}
+
+.widget.profile .bk-profile-socialicons span.bk-socialicons-linkedin a {
+    background-image: image('/images/social/socialicons-linkedin.png')
+}
+
+.widget.profile .bk-profile-socialicons span.bk-socialicons-facebook a {
+    background-image: image('/images/social/socialicons-facebook.png')
+}
+
+.widget.profile .bk-profile-socialicons span.bk-socialicons-rss a {
+    background-image: image('/images/social/socialicons-rss.png')
+}
+
+.widget.profile .bk-profile-socialicons span.bk-socialicons-googleplus a {
+    background-image: image('/images/social/socialicons-googleplus.png')
+}
+
+.widget.profile .bk-profile-socialicons span.bk-socialicons-youtube a {
+    background-image: image('/images/social/socialicons-youtube.png')
+}
 

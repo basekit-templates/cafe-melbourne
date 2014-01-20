@@ -3,6 +3,8 @@
 
 {% block content %}
 
+{{widget('extendednavigation', 'navigationheader', {})|raw}}
+
 <header>
     <div class="wrapper clearfix">
         <div class="header-top-border"></div>
@@ -14,12 +16,14 @@
     </div><!--end wrapper clearfix-->
 </header>
 
-{{widget('menusections', 'desktop-menusections', {})|raw}}
-{{widget('menu', 'menu1', {})|raw}}
+<div class="main wrapper clearfix">
+    {{zone('main')|raw}}
+</div> 
 
 <footer>
     <div class="wrapper clearfix">
         {{widget('content', 'footercolumn1content', {"content":"<p>Lorem Ipsum Dolor</p>"})|raw}}
+        {{widget('profile', 'footercolumn1socialicons', { 'profileType':'socialicons', 'socialicons':'profile'})|raw}}
 
     </div>
 </footer>
