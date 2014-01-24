@@ -186,10 +186,10 @@ header {
         position: relative;
         max-width: 100%;
         min-height: 40px;
-        background-color: @color-swatch3;
+        background-color: hsla(hue(@color-swatch7), saturation(@color-swatch7), lightness(@color-swatch7), 0.6);
         li {
             ul {
-                display: none;
+                display: none !important;
             }
         }
         ul {
@@ -226,7 +226,7 @@ header {
 
                 &:hover {
                     ul {
-                        display: block;
+                        display: block !important;
                         position: absolute;
                         background-color: @color-swatch3;
                         z-index: 500;
