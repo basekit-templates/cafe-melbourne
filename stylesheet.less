@@ -440,7 +440,6 @@ header {
                 padding-right: 15px;
                 margin: 0;
                 &:last-child {
-                    border-bottom:none;
                     padding-right: 0;
                 }
                 @media @tablet {
@@ -512,6 +511,7 @@ header {
             &.selected {
                 display: block;
                 margin: 0 auto;
+                float: left;
             }
                 @media @tablet {
                     padding: 10px 0;
@@ -597,6 +597,20 @@ header {
                             -webkit-column-count: 1;
                             -moz-column-count: 1;
                             column-count: 1;
+                            li {
+                                &.menu-item-promoted { 
+                                    display: block;
+                                }
+                                .inner-item {
+                                    .menu-item-image-wrap {
+                                        width: 60%;
+                                        margin: 0 auto;
+                                        @media @mobile {
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
 
