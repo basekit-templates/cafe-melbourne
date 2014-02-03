@@ -294,7 +294,7 @@ header {
                         letter-spacing: @font-swatch6-letter-spacing;
                         position: relative;
                         &:after {
-                            content: "▼";
+                            content: "\25BC";
                             font-size: 5px;
                             position: absolute;
                             top: 1px;
@@ -559,11 +559,11 @@ header {
                  .menu-items {
                     width: 100%;
                     -webkit-column-count: 2;
-                    -webkit-column-gap: 3em;
+                    -webkit-column-gap: 4em;
                     -moz-column-count: 2;
-                    -moz-column-gap: 3em;   
+                    -moz-column-gap: 4em;   
                     column-count: 2;
-                    column-gap: 3em;
+                    column-gap: 4em;
                     > * {
                         break-inside: avoid;
                         -webkit-column-break-inside: avoid;
@@ -617,7 +617,7 @@ header {
                     li { /* menu-item */
                         position: relative;
                         display: block;
-                        text-align: center;
+                        text-align: left;
                         padding: 0;
                         margin-bottom: 0;
                         &.menu-item-promoted { /* menu-item-promoted */
@@ -631,14 +631,15 @@ header {
                                         padding: 10px 0 0 0;
                                     }
                                     &:after {
-                                        content: "★";
+                                        content: "\2605";
                                         font-size: 2em;
                                         position: absolute;
                                         top: -15px;
                                         display: block;
                                         z-index: 9999999;
-                                        right: 0;
-                                        left: 0;
+                                        right: 50%;
+                                        left: 50%;
+                                        margin-left: -12px;
                                         color: @color-swatch3;
                                     }
                                 }
@@ -854,45 +855,7 @@ header {
                       width: 100%;
                       padding: 2em 0;
                     }
-
-                    dl { /* menu-dietary-key */
-                      float: left;
-                      width: 100%;
-                      margin: 5px 0;
-                        dt, dd {
-                            display: inline-block;
-                        }
-                        dt { /* dietary-icon */
-                            vertical-align: top; 
-                            background-color: lighten(@color-swatch6,10%);
-                            width: 25px;
-                            height: 25px;
-                            border: 0;
-                            -webkit-border-radius: 100px;
-                            -moz-border-radius: 100px;
-                            border-radius: 100px;
-                            background-repeat: no-repeat;
-                            background-size: 13px;
-                            background-position: center;
-                        }
-                        .vegetarian-icon {
-                            background-image: image('/images/veggie.png');
-                        }
-
-                        .glutenFree-icon {
-                            background-image: image('/images/nuts.png');
-                        }
-                        dd { /* text for icon */
-                            font-family:@font-swatch5-font-family;
-                            font-size:@font-swatch5-font-size;
-                            font-weight: @font-swatch5-font-weight;
-                            line-height:@font-swatch5-line-height;
-                            color: @font-swatch5-color;
-                            letter-spacing: @font-swatch5-letter-spacing;
-                            margin: 0 5px -7px;
-                        } /* end dd */
-                    } /* end dl */
-            } /* end menu-info */
+                } /* end menu-info */
         } /* end main */
     } /*end .menu */
 }/* end .widget */
