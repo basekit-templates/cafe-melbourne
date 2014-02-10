@@ -372,6 +372,10 @@ header {
     }
 }
 
+.widget .extendednavigation ul li.folder:after {
+    display: none;
+}
+
 /* ===============================
    MENU SECTIONS NAVIGATION
    =============================== */
@@ -861,10 +865,25 @@ header {
   CONTACT FORM
    =============================== */
 
+    .widget.contactform fieldset input, .widget.contactform fieldset textarea {
+        border: 1px solid darken(@color-swatch1,10%);
+    }
+
    .contactform fieldset {
         border: none;
         margin: 0 0 10px;
         padding: 0;
+    }
+
+    /* ===============================
+  SIGN UP FORM
+   =============================== */
+
+   .widget.signupform fieldset input {
+        border: 1px solid darken(@color-swatch1,10%);
+    }
+    .signupform fieldset button {
+        padding: 10px 10 20px;
     }
 
 /* ===============================
@@ -902,15 +921,17 @@ header {
 .widget {
     &.responsiveslideshow {
         .content-wrapper {
-            background-color: @color-swatch5;
+            background-color: @color-swatch7;
         }
         .title {
             display: inline-block;
             padding:10px 15px 0 15px;
+            color: @color-swatch5;
         }
         .description {
             display: block;
             padding: 0 15px 15px;
+            color: @color-swatch5;
         }
     }
 }
