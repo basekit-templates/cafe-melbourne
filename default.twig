@@ -6,7 +6,7 @@
 
 <div class="bk-pt-default">
 
-<header>
+<header class="bk-header">
     <div class="wrapper clearfix">
         <div class="header-top-border"></div>
         <div class="companyheader clearfix">
@@ -21,10 +21,10 @@
     {{zone('main')|raw}}
 </div> 
 
-<footer>
+<footer class="bk-footer">
     <div class="wrapper clearfix">
         {{widget('content', 'footercolumn1content', {"content":"<p>Lorem Ipsum Dolor</p>"})|raw}}
-        {{widget('profile', 'footercolumn1socialicons', { 'profileType':'socialicons', 'socialicons':'profile'})|raw}}
+        {{widget('socialicons', 'footercolumn1socialicons', { 'profileType':'socialicons', 'socialicons':'profile'})|raw}}
     </div>
 </footer>
 
